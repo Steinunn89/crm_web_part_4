@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  		<title>My CRM</title>
+  		<link rel="stylesheet" type="text/css" href="/styles.css">
+  </head>
+
+  <body>
+	  	<header>
+	  		<h1 class="title"> <%=@crm_app_name %> </h1>
+	  	</header>
+
+	    <%= yield %>
+
+	  	<footer>
+	  		<p> Go to back to the <a class="special" href=" / ">Main Menu</a></p>
+	  		<p class="secret">Congratulations you found the secret</p>
+	  	</footer>
+  </body>
+</html>

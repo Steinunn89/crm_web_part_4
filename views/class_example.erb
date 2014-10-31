@@ -1,0 +1,132 @@
+<form id="new forms" action=".films" method="post">
+
+<!-- # input text / date / time / email / tel / number / search -->
+
+
+<!-- use ID as unique -->
+
+<label for="film-title">Title</label> <!-- Title in-line element -->
+
+<!-- name is key whatever you enter is value, always incl name, unique name so you can get --> 
+<!-- value="Some text" sets default value, which you can change it, if submit will have value -->
+<!-- HTML5 has placeholder greyed out, if submit has no value -->
+<!-- don't use placeholder as labels! -->
+
+<div class="field">
+
+	<input id="film-title" type="text" name"Title" placeholder="e.g. Back to the Future" > 
+
+</div>
+
+<!-- <input type="date">
+<input type="time">
+<input type="email">
+<input type="tel">
+<input type="number">
+<input type="url">
+<input type="searcg">
+ -->
+<div class="field">
+
+	<textarea id="film-decription" name="description" rows="20" columns="100" placeholder="Decribe this film"></textarea>
+
+</div>
+
+<div class="field">
+
+	<!-- radio buttoms = mutually exclusive only pick one, check box can choose many -->
+	<!-- if check radio box, it's checked for all time -->
+	<!-- need value to be sent, default has no value -->
+
+	<label>
+		<input type="radio" name="rating" value="1"> 
+		One
+	</label>
+	<label>
+		<input type="radio" name="rating" value="2"> 
+		Two
+	</label>
+	<label>
+		<input type="radio" name="rating" value="3"> 
+		Three
+	</label>
+	<label>
+		<input type="radio" name="rating" value="4"> 
+		Four
+	</label>
+	<label>
+		<input type="radio" name="rating" value="5">
+		Five
+	</label>
+	<!-- <input type="checkbox"> -->
+
+</div>
+
+<div class="field">
+	<!-- must have [] to indicate array to return multiple values, otherwise only get 1 -->
+	<label>
+		<input type="checkbox" name="genre[]" value="action">
+		Action
+	</label>
+	<label>
+		<input type="checkbox" name="genre[]" value="adventure">
+		Adventure
+	</label>
+	<label>
+		<input type="checkbox" name="genre[]" value="comedy">
+		Comedy
+	</label>
+	<label>
+		<input type="checkbox" name="genre[]" value="drama">
+		Drama
+	</label>
+	<label>
+		<input type="checkbox" name="genre[]" value="horror">
+		Horror
+	</label>
+	<label>
+		<input type="checkbox" name="genre[]" value="thriller">
+		Thriller
+	</label>
+	<label>
+		<input type="checkbox" name="genre[]" value="western">
+		Western
+	</label>
+
+</div>
+
+<div class="field">
+
+		<label for="film-country">Country</label>
+		<select name="country" id="film-country">
+
+
+		<option value="">Select</option>
+		<option value="US">US</option>
+		<option value="Canada">Canada</option>
+
+
+</div>
+
+<!-- <div class="field">
+	<label for="film-image"> </label>
+	<input id="film-image" type="file" name="poster">
+</div> -->
+<!-- Hidden field don't want user to see but need  -->
+<!-- <input type ="hidden" name="user-id" value="99"> -->
+
+<!-- <input type="submit" name="submit-button" value="Create Film"> -->
+
+<button type="submit" class="bottom">
+	<img src="http://someimage.com/image/32x32" alt"">
+	Create Film
+</button>
+
+
+
+
+
+
+
+
+</form>
