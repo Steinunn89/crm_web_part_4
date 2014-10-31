@@ -1,12 +1,9 @@
 <h1 class="subtitle">All Contacts</h1>
 
 <ul>
-  <% $rolodex.contacts.each do |contact| %>
+  <% @contacts.each do |contact| %>
     <li class="bullet">
 
     	<a class="special" href="/contacts/<%= contact.id %>"><p class="text"><%= contact.first_name %> <%= contact.last_name %> </a></p></li>
   <% end %>
 </ul>
-
-
-
