@@ -1,5 +1,4 @@
 require 'sinatra'
-require './rolodex'
 require 'data_mapper'
 
 DataMapper.setup(:default, "sqlite3:database.sqlite3")
@@ -18,13 +17,6 @@ end
 
 DataMapper.finalize
 DataMapper.auto_upgrade!
-
-
-$rolodex = Rolodex.new
-# $rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar"))
-
-# $rolodex = Rolodex.new
-
 
 get '/' do 
 
@@ -58,7 +50,7 @@ post '/contacts' do
 end
 
 get "/contacts/:id" do
-  @contact = Contact.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     erb :show_contact
   else
@@ -66,10 +58,8 @@ get "/contacts/:id" do
   end
 end
 
-end
-
 get "/contacts/:id/edit" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     erb :edit_contact
   else
@@ -78,7 +68,7 @@ get "/contacts/:id/edit" do
 end
 
 put "/contacts/:id" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
     @contact.first_name = params[:first_name]
     @contact.last_name = params[:last_name]
@@ -92,9 +82,9 @@ put "/contacts/:id" do
 end
 
 delete "/contacts/:id" do
-  @contact = $rolodex.find(params[:id].to_i)
+  @contact = Contact.get(params[:id].to_i)
   if @contact
-    $rolodex.remove_contact(@contact)
+    Contact.delete(@contact)
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
